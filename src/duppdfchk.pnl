@@ -1,0 +1,192 @@
+:pnlgrp.
+.************************************************************************
+.*  Help for command DUPPDFCHK
+.************************************************************************
+:help name='DUPPDFCHK'.
+DUPPDFCHK - Help
+:p.DUPPDFCHK sends two files to server to check if they are identical.
+:p.STATUS 200 indicates checked location is identical.
+:p.STATUS 299 indicates that checked location is not identical.
+:ehelp.
+.*******************************************
+.*   Help for parameter FILEA
+.*******************************************
+:help name='DUPPDFCHK/FILEA'.
+File A (FILEA) - Help
+:xh3.File A (FILEA)
+:p.Specifies the first file to compare
+.* Describe the function provided by the parameter.
+:parml.
+:pt.:pv.character-value:epv.
+:pd.
+Specify the full path to the file on the IFS
+.* Describe the function provided by the user-defined parameter value.
+:eparml.
+:ehelp.
+.*******************************************
+.*   Help for parameter FILEB
+.*******************************************
+:help name='DUPPDFCHK/FILEB'.
+File B (FILEB) - Help
+:xh3.File B (FILEB)
+:p.Specifies the second file to compare
+.* Describe the function provided by the parameter.
+:parml.
+:pt.:pv.character-value:epv.
+:pd.
+Specify the full path to the file on the IFS
+.* Describe the function provided by the user-defined parameter value.
+:eparml.
+:ehelp.
+.*******************************************
+.*   Help for parameter ULX
+.*******************************************
+:help name='DUPPDFCHK/ULX'.
+Upper Left X (ULX) - Help
+:xh3.Upper Left X (ULX)
+:p.Specifies upper left X coordinate (point)
+.* Describe the function provided by the parameter.
+:parml.
+:pt.:pv.integer:epv.
+:pd.
+Specify the upper left X cordinate of document to compare
+.* Describe the function provided by the user-defined parameter value.
+:eparml.
+:ehelp.
+.*******************************************
+.*   Help for parameter ULY
+.*******************************************
+:help name='DUPPDFCHK/ULY'.
+Upper Left Y (ULY) - Help
+:xh3.Upper Left Y (ULY)
+:p.Specifies upper left Y coordinate (point)
+.* Describe the function provided by the parameter.
+:parml.
+:pt.:pv.integer:epv.
+:pd.
+Specify the upper left Y cordinate of document to compare
+.* Describe the function provided by the user-defined parameter value.
+:eparml.
+:ehelp.
+.*******************************************
+.*   Help for parameter LRX
+.*******************************************
+:help name='DUPPDFCHK/LRX'.
+Lower Right X (LRX) - Help
+:xh3.Lower Right X (LRX)
+:p.Specifies lower right X coordinate (point)
+.* Describe the function provided by the parameter.
+:parml.
+:pt.:pv.integer:epv.
+:pd.
+Specify the lower right X cordinate of document to compare
+
+.* Describe the function provided by the user-defined parameter value.
+:eparml.
+:ehelp.
+.*******************************************
+.*   Help for parameter LRY
+.*******************************************
+:help name='DUPPDFCHK/LRY'.
+Lower Right Y (LRY) - Help
+:xh3.Lower Right Y (LRY)
+:p.Specifies lower left y coordinate (point)
+.* Describe the function provided by the parameter.
+:parml.
+:pt.:pv.integer:epv.
+:pd.
+Specify the lower left Y cordinate of document to compare
+
+.* Describe the function provided by the user-defined parameter value.
+:eparml.
+:ehelp.
+.*******************************************
+.*   Help for parameter STATUS
+.*******************************************
+:help name='DUPPDFCHK/STATUS'.
+Status code (out) (STATUS) - Help
+:xh3.Status code (out) (STATUS)
+:p.Specifies the status code returned from the call
+.* Describe the function provided by the parameter.
+:parml.
+:pt.:pv.decimal-number:epv.
+:pd.
+This is an out parameter that specifies the status code returned from the call
+.* Describe the function provided by the user-defined parameter value.
+:eparml.
+:ehelp.
+.*******************************************
+.*   Help for parameter STATUSCD
+.*******************************************
+:help name='DUPPDFCHK/STATUSCD'.
+Status description (out) (STATUSCD) - Help
+:xh3.Status description (out) (STATUSCD)
+:p.Specifies the status description coming from the call
+.* Describe the function provided by the parameter.
+:parml.
+:pt.:pv.character-value:epv.
+:pd.
+.* Describe the function provided by the user-defined parameter value.
+:eparml.
+:ehelp.
+.**************************************************
+.*
+.* Examples for DUPPDFCHK
+.*
+.**************************************************
+:help name='DUPPDFCHK/COMMAND/EXAMPLES'.
+Examples for DUPPDFCHK - Help
+:xh3.Examples for DUPPDFCHK
+:p.:hp2.Command Example:ehp2.
+:xmp.
+DUPPDFCHK  +                                               
+              FILEA('/IFS/A.pdf' +                   
+              FILEB('/IFS/subdir/B.pdf' +  
+              ULX(19) ULY(271) +        
+              LRX(595) LRY(731) +
+              STATUS(&STATUS)            
+:exmp.
+.* Compare the contents of the defined region between the two input PDF files.
+.*
+:ehelp.
+.**************************************************
+.*
+.* Error messages for DUPPDFCHK
+.*
+.**************************************************
+:help name='DUPPDFCHK/ERROR/MESSAGES'.
+&msg(CPX0005,QCPFMSG). DUPPDFCHK - Help
+:xh3.&msg(CPX0005,QCPFMSG). DUPPDFCHK
+:p.:hp3.*ESCAPE &msg(CPX0006,QCPFMSG).:ehp3.
+.************************************************************************
+.* List the *ESCAPE, *STATUS, and *NOTIFY messages signalled from the command.
+.* The following are generic messages defined in message file QCPFMSG.
+.* Modify this list to match the list of error messages for the command.
+.************************************************************************
+:DL COMPACT.
+:DT.CPF9801
+:DD.&MSG(CPF9801,QCPFMSG,*LIBL,nosub).
+:DT.CPF9802
+:DD.&MSG(CPF9802,QCPFMSG,*LIBL,nosub).
+:DT.CPF9803
+:DD.&MSG(CPF9803,QCPFMSG,*LIBL,nosub).
+:DT.CPF9807
+:DD.&MSG(CPF9807,QCPFMSG,*LIBL,nosub).
+:DT.CPF9808
+:DD.&MSG(CPF9808,QCPFMSG,*LIBL,nosub).
+:DT.CPF9810
+:DD.&MSG(CPF9810,QCPFMSG,*LIBL,nosub).
+:DT.CPF9811
+:DD.&MSG(CPF9811,QCPFMSG,*LIBL,nosub).
+:DT.CPF9812
+:DD.&MSG(CPF9812,QCPFMSG,*LIBL,nosub).
+:DT.CPF9820
+:DD.&MSG(CPF9820,QCPFMSG,*LIBL,nosub).
+:DT.CPF9830
+:DD.&MSG(CPF9830,QCPFMSG,*LIBL,nosub).
+:DT.CPF9899
+:DD.&MSG(CPF9899,QCPFMSG,*LIBL,nosub).
+:EDL.
+:ehelp.
+:epnlgrp.
+

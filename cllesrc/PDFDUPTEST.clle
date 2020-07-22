@@ -1,0 +1,19 @@
+PGM                                                                 
+DCL        VAR(&CCSID) TYPE(*DEC) LEN(5 0)                          
+DCL        VAR(&DUPPDFSTS) TYPE(*DEC) LEN(5 0) VALUE(-1)            
+                                                                    
+RTVJOBA    CCSID(&CCSID)                                            
+                                                                    
+CHGJOB     CCSID(37)                                                
+                                                                    
+             DUPPDFCHK  FILEA('/test_document1.pdf') +   
+                          FILEB('/test_document2.pdf') + 
+                          STATUS(&DUPPDFSTS)                        
+                                                                    
+             SNDPGMMSG  MSGID(CPF9897) MSGF(QCPFMSG) MSGDTA('The +  
+                          status returned from this command:' *BCAT +
+                          %CHAR(&DUPPDFSTS))                        
+CHGJOB     CCSID(&CCSID)       
+                               
+ENDPGM                         
+
